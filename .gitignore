@@ -3,4 +3,5 @@ target/
 .python-version
 *.iml
 out/
-__pycache__
+*.pyc
+__pycache__/
