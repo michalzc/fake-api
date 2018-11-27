@@ -4,7 +4,7 @@ import time
 import uuid
 
 import jsonpickle
-from flask import Flask
+from flask import Flask, request
 
 from model import Item
 
@@ -21,13 +21,15 @@ def get_items(item_id=None):
     app.logger.info("Returning item")
     return item
 
+
 @app.route("/")
 def hello():
     return "Hello World!"
 
 
-@app.route("/items/<item_id>")
+@app.route("/items/<item_id>", methods=['GET'])
 def handle_items(item_id):
+
     response = app.response_class(
         response=jsonpickle.dumps(get_items(item_id)),
         status=200,
@@ -35,3 +37,18 @@ def handle_items(item_id):
     )
 
     return response
+
+
+@app.route("/items/<item_id>", methods=['PUT'])
+def handle_put(item_id):
+    # app.logger.info("Received:\nContentType: %s", request.content_type)
+    r = round(random.random() * 4)
+    app.logger.info("Request with id: %s and version %s waiting %d seconds" % (item_id, request.args.get('version'), r))
+    time.sleep(r)
+    app.logger.info("Returning item")
+
+    return app.response_class(
+        status=201,
+        mimetype='application/json',
+        response='{"success":true}'
+    )

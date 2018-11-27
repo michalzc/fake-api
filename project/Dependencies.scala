@@ -18,6 +18,7 @@ object Dependencies {
       ExclusionRule(organization = "io.netty")
     ),
     "io.netty" % "netty-all" % "4.0.43.Final",
-    "org.apache.httpcomponents" % "httpasyncclient" % "4.1.4"
+    "org.apache.httpcomponents" % "httpasyncclient" % "4.1.4",
+    "com.typesafe.akka" %% "akka-actor" % "2.4.14"
   )
 }
