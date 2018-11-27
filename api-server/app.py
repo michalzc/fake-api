@@ -15,7 +15,7 @@ app = Flask(__name__)
 def get_items(item_id=None):
     item_id = item_id and item_id or str(uuid.uuid4())
     item = Item(item_id, "Description of %s" % str(item_id))
-    r = round(random.random() * 10)
+    r = round(random.random() * 4)
     app.logger.info("Request for %s - waiting %d seconds" % (item_id, r))
     time.sleep(r)
     app.logger.info("Returning item")

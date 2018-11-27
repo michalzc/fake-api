@@ -12,6 +12,8 @@ object Dependencies {
     "org.apache.logging.log4j" % "log4j-slf4j-impl" % log4jVersion,
     "org.typelevel" %% "cats-core" % catsVersion,
     "io.circe" %% "circe-generic" % circeVersion,
-    "org.scalaj" %% "scalaj-http" % "2.4.1"
+    "io.circe" %% "circe-parser" % circeVersion,
+    "org.scalaj" %% "scalaj-http" % "2.4.1",
+    "com.softwaremill.sttp" %% "async-http-client-backend-future" % "1.5.0"
   )
 }
