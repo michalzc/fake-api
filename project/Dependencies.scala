@@ -14,6 +14,4 @@ object Dependencies {
     "io.circe" %% "circe-generic" % circeVersion,
     "org.scalaj" %% "scalaj-http" % "2.4.1"
   )
-
-
 }
