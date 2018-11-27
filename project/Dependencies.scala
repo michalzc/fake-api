@@ -14,6 +14,10 @@ object Dependencies {
     "io.circe" %% "circe-generic" % circeVersion,
     "io.circe" %% "circe-parser" % circeVersion,
     "org.scalaj" %% "scalaj-http" % "2.4.1",
-    "com.softwaremill.sttp" %% "async-http-client-backend-future" % "1.5.0"
+    "com.softwaremill.sttp" %% "async-http-client-backend-future" % "1.0.6" excludeAll(
+      ExclusionRule(organization = "io.netty")
+    ),
+    "io.netty" % "netty-all" % "4.0.43.Final",
+    "org.apache.httpcomponents" % "httpasyncclient" % "4.1.4"
   )
 }
